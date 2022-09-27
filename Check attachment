@@ -1,0 +1,20 @@
+//Client script
+/**Este script valida a quantidade de anexos adicionada ao um formulário e caso necessário exibe uma mensagem de erro**/
+function onSubmit() {
+  
+  var qtd = 1;
+  if(window == null){
+  // caso portal
+    if(this.document.getElementsByClassName('get-attachment').length != qtd) {
+      g_form.addErrorMessage('Você deve anexar ao menos 1 arquivo');
+      return false;
+    }
+  } else {
+    // caso plataforma
+    var length = $j("li.attachment_list_items").find("span").length;
+    if(length != countRequired){
+      g_form.addErrorMessage('g_form.addErrorMessage('Você deve anexar ao menos 1 arquivo');
+      return false;
+    }
+  }
+}
